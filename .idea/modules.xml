@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RoundImage.iml" filepath="$PROJECT_DIR$/RoundImage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_roundimage/library_roudimage.iml" filepath="$PROJECT_DIR$/library_roundimage/library_roudimage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_roundimage/library_roundimage.iml" filepath="$PROJECT_DIR$/library_roundimage/library_roundimage.iml" />
+    </modules>
+  </component>
+</project>
