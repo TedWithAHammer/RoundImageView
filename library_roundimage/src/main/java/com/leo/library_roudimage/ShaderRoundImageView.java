@@ -12,6 +12,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.widget.ImageView;
 
@@ -80,20 +81,23 @@ public class ShaderRoundImageView extends ImageView {
         Bitmap bitmap = drawable2Bitmap(drawable);
         mBitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
         float scale = 1.0f; //bitmap:canvas ratio
+        Log.i("------", "bitmap original width：" + bitmap.getWidth() + "height" + bitmap.getHeight());
         if (type == TYPE_CIRCLE) {
             int minWidth = Math.min(bitmap.getWidth(), bitmap.getHeight());
             scale = viewWidth * 1.0f / minWidth;
         } else {
             scale = Math.max(getWidth() * 1.0f / bitmap.getWidth(), getHeight() * 1.0f / bitmap.getHeight());
         }
-        if (scale < 1.0f) {
-            setScaleType(ScaleType.CENTER_INSIDE);
+        mMatrix.setScale(scale, scale);
+        //显示图片中心
+        if (bitmap.getWidth() * 1.0 / bitmap.getHeight() < 1) {
+            mMatrix.postTranslate(0, -getHeight() / 2);
         } else {
-            setScaleType(ScaleType.CENTER_CROP);
-            mMatrix.setScale(scale, scale);
-            mBitmapShader.setLocalMatrix(mMatrix);
-            mPaint.setShader(mBitmapShader);
+            mMatrix.postTranslate(-getWidth() / 2, 0);
         }
+        mBitmapShader.setLocalMatrix(mMatrix);
+        Log.i("------", "bitmap new width：" + bitmap.getWidth() + "height" + bitmap.getHeight());
+        mPaint.setShader(mBitmapShader);
     }
 
     private Bitmap drawable2Bitmap(Drawable drawable) {

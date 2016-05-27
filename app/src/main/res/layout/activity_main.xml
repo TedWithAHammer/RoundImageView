@@ -14,10 +14,17 @@
 
 
     <com.leo.library_roudimage.ShaderRoundImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/img_test"
         leo:cornerRadius="20dp"
         leo:type='round'/>
+
+    <com.leo.library_roudimage.XFModeRoundImageView
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:src="@drawable/test_2"
+        leo:type="circle"/>
+
 </LinearLayout>
