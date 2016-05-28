@@ -67,7 +67,6 @@ public class XFModeRoundImageView extends ImageView {
         mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         temp.drawBitmap(maskBmp, 0, 0, mPaint);
         mPaint.setXfermode(null);
-
         canvas.drawBitmap(bmp,0,0,mPaint);
     }
 
