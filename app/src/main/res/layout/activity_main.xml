@@ -18,8 +18,9 @@
         android:layout_height="78dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/test_1"
-        leo:cornerRadius="20dp"
-        leo:type='round'/>
+        leo:borderColor="@color/colorRed"
+        leo:borderWidth="2dp"
+        leo:type='loop'/>
 
     <com.leo.library_roudimage.XFModeRoundImageView
         android:layout_width="78dp"
